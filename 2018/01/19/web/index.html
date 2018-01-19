@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.1',
+    sidebar: {"position":"left","display":"post","offset":50,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+  
+  <meta name="keywords" content="RoisinLee, Java,JavaScript,李文清,读书笔记" />
+
+
+<meta name="description" content="xml1.可扩展标记性语言，主要用来传输和存储数据，还可以表示生活中的关系数据及最常使用在配置文件中，其中的标签可以自定义。只能有一个根标签，xml中会把空格以及换行全部当作是内容来进行解析，xml代码区分大小写标签。标签可以是中文。 文档声明：&amp;lt;?xml version=”1.0” encoding=”utf-8”?&amp;gt;必须要写到文档的第一行。 文档属性：version:xml版本，e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web">
+<meta property="og:url" content="https://RoisinLee.github.io/2018/01/19/web/index.html">
+<meta property="og:site_name" content="图解JAVA">
+<meta property="og:description" content="xml1.可扩展标记性语言，主要用来传输和存储数据，还可以表示生活中的关系数据及最常使用在配置文件中，其中的标签可以自定义。只能有一个根标签，xml中会把空格以及换行全部当作是内容来进行解析，xml代码区分大小写标签。标签可以是中文。 文档声明：&amp;lt;?xml version=”1.0” encoding=”utf-8”?&amp;gt;必须要写到文档的第一行。 文档属性：version:xml版本，e">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-19T02:42:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web">
+<meta name="twitter:description" content="xml1.可扩展标记性语言，主要用来传输和存储数据，还可以表示生活中的关系数据及最常使用在配置文件中，其中的标签可以自定义。只能有一个根标签，xml中会把空格以及换行全部当作是内容来进行解析，xml代码区分大小写标签。标签可以是中文。 文档声明：&amp;lt;?xml version=”1.0” encoding=”utf-8”?&amp;gt;必须要写到文档的第一行。 文档属性：version:xml版本，e">
+
+
+
+
+
+
+  <link rel="canonical" href="https://RoisinLee.github.io/2018/01/19/web/"/>
+
+
+  <title>web | 图解JAVA</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">图解JAVA</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />Über</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Kategorien</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://RoisinLee.github.io/2018/01/19/web/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RoisinLee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="图解JAVA">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">web</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-19T10:27:36+08:00">2018-01-19</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="xml"><a href="#xml" class="headerlink" title="xml"></a>xml</h2><p>1.可扩展标记性语言，主要用来传输和存储数据，还可以表示生活中的关系数据及最常使用在配置文件中，其中的标签可以自定义。只能有一个根标签，xml中会把空格以及换行全部当作是内容来进行解析，xml代码区分大小写标签。标签可以是中文。</p>
+<p>文档声明：&lt;?xml version=”1.0” encoding=”utf-8”?&gt;必须要写到文档的第一行。</p>
+<p>文档属性：version:xml版本，encoding：xml的编码（GBK，UTF-8，iso8859-1（不包含中文）），standalone：是否需要依赖其他文件。</p>
+<p>xml注释：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 我是注释 --&gt;</span><br></pre></td></tr></table></figure></p>
+<p>特殊字符：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt; $lt &gt; &amp;gt &amp; &amp;amp</span><br></pre></td></tr></table></figure></p>
+<p>CDATA区：直接显示内容，不进行转义。&lt;![CDATA[内容]]&gt;</p>
+<p>PI指令：设置样式显示内容。&lt;?xml-stylesheet type=”text/css” href=”css location”?&gt;对中文不起作用，只适用于英文。<br><a id="more"></a></p>
+<p>2.xml约束用来控制xml文件中可以出现的元素。而浏览器只负责校验语法，而不负责校验约束，校验约束要使用IDE工具。</p>
+<p>主要技术：dtd约束和schema约束。</p>
+<p>dtd约束：以后缀名.dtd来命名文件，在xml文件中有几个元素就写几个&lt;!ELEMENT&gt;</p>
+<p>复杂元素：&lt;!ELEMENT 元素名 (子元素,子元素…)&gt; +一次或多次 ?0或者1次 *0或者多次 ,隔开表示元素出现的顺序 | 表示或，只能出现多个元素中的一个</p>
+<p>简单元素：&lt;!ELEMENT 元素名 (#PCDATA)&gt; #PCDATA字符串 EMPTY空 ANY任意</p>
+<p>引入dtd：&lt;!DOCTYPE 根元素名 SYSTEM “dtd文件的路径”&gt;（本地）&lt;!DOCTYPE 根元素名 PUBLIC “dtd名称” “dtd文档的url”&gt;</p>
+<p>定义属性：&lt;!ATTLIST 元素名 属性名 属性类型 属性约束&gt;</p>
+<p>属性类型：字符串 #CDATA 枚举 （aa|bb|cc）ID 值只能是字母或者是下划线开头</p>
+<p>属性约束：REQUIRED 必须出现 IMPLIED 可有可无 FIXED 固定值</p>
+<p>定义实体：&lt;!ENTITY entityName “data”&gt; 使用&entityName;引用（需要定义在内部dtd内）</p>
+<p>3.xml解析（原生Java实现）</p>
+<p>解析方式：dom    或者sax</p>
+<p>dom解析：在文件过大时容易出现内存溢出，但是其树形结构方便增删改查。</p>
+<p>sax解析：事件驱动，边读边解析。自上而下，一行一行的解析。不会造成内存溢出，可以实现查询，但是不能实现增删改操作。</p>
+<p>解析器：sun公司 jaxp dom4j组织 dom4j jdom组织 jdom </p>
+<p>4.dom4j</p>
+<p>默认不支持XPATH，需要引入额外的jar包（jaxen…jar）。</p>
+<p>引入之后默认提供的selectNodes()和selectSingleNode()可以使用XPATH。</p>
+<h2 id="单元测试（jnit）"><a href="#单元测试（jnit）" class="headerlink" title="单元测试（jnit）"></a>单元测试（jnit）</h2><p>能够进行单元测试的方法必须是public void Method(){}，即没有返回值且没有方法参数。</p>
+<p>注解：</p>
+<p>@Test测试某个方法</p>
+<p>@Ignore忽略某个方法</p>
+<p>@Before在每一个方法测试前执行</p>
+<p>@After在每一个方法测试后执行</p>
+<p>使用断言：Assert</p>
+<h2 id="软件系统体系结构"><a href="#软件系统体系结构" class="headerlink" title="软件系统体系结构"></a>软件系统体系结构</h2><table>
+<thead>
+<tr>
+<th>B/S</th>
+<th>C/S</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>浏览器/服务器</td>
+<td>客户端/服务器</td>
+</tr>
+<tr>
+<td>安全性较好/维护复杂</td>
+<td>安全性较差/只需维护服务器</td>
+</tr>
+</tbody>
+</table>
+<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><h3 id="web资源"><a href="#web资源" class="headerlink" title="web资源"></a>web资源</h3><p>1.静态资源：html，（在请求时直接返回。）</p>
+<p>2.动态资源：jsp/servlet/php/asp（需要转换称静态的html才能为浏览器所用）</p>
+<p>3.访问方式：打开浏览器，输入：协议名://域名:端口/路径</p>
+<p>4.web服务器：tomcat，Jboss</p>
+<h3 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h3><p>1.开源免费</p>
+<p>2.创建静态web应用：</p>
+<ul>
+<li><p>在webapps目录下创建一个目录，不能包含中文和空格。</p>
+</li>
+<li><p>在项目目录下创建html文件。</p>
+</li>
+</ul>
+<p>3.创建动态web项目</p>
+<ul>
+<li><p>在webapps目录下创建一个项目目录，</p>
+</li>
+<li><p>在项目目录下创建WEB-INF目录，并在其中创建web.xml文件，不能直接被浏览器访问。在该目录下面还可以创建一个lib目录存放jar包，还可以创建一个classes目录存放生成的字节码文件。</p>
+</li>
+<li><p>在项目目录下创建一个html文件</p>
+</li>
+</ul>
+<p>4.配置外部项目</p>
+<p>在server.xml下的Host标签下创建一个Context标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot;</span><br><span class="line"></span><br><span class="line">            unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Context path=&quot;Hello&quot; docBase=&quot;C:/Demo&quot;/&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Valve className=&quot;org.apache.catalina.valves.AccessLogValve&quot; directory=&quot;logs&quot;</span><br><span class="line"></span><br><span class="line">               prefix=&quot;localhost_access_log&quot; suffix=&quot;.txt&quot;</span><br><span class="line"></span><br><span class="line">               pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/Host&gt;</span><br></pre></td></tr></table></figure>
+<p>或者在conf/Catalina/localhost/下创建一个xml配置文件，该文件名即为项目访问名，内部书写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context docBase=&quot;C:/Demo&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>5.创建虚拟主机</p>
+<p>在server.xml下创建一个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Host name=&quot;www.southwe.io&quot;  appBase=&quot;F:/webapps&quot;</span><br><span class="line"></span><br><span class="line">            unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;/Host&gt;</span><br></pre></td></tr></table></figure>
+<p>并且修改hosts中的ip地址和对应的网址。</p>
+<p>6.Http协议</p>
+<p>请求行 GET /Demo/index.jsp HTTP/1.1</p>
+<p>多个请求头信息：</p>
+<p><strong> Accept</strong>: 可以接受的文件类型</p>
+<p><strong> Accept-language</strong>：zh-CN,en-US;q=0.5（以第一个为主）</p>
+<p><strong> User-Agent</strong>：请求用户的基本信息</p>
+<p><strong> Accept-Encoding</strong>:gzip,deflate</p>
+<p><strong> Host</strong>:请求的主机名</p>
+<p><strong> Connection</strong>:Keep-Alive</p>
+<p><strong> Referer</strong>：请求发出的地址（用来实现防盗链 统计请求来自哪的访问量）</p>
+<p>响应行 HTTP/1.1 200 OK 状态码 状态解释</p>
+<p><strong> 2??</strong> 表示成功</p>
+<p><strong> 3??</strong> 表示要转接 302请求重定向（会有Location响应头）304（判断缓存，在使用动态页面时要使用no-cache）</p>
+<ul>
+<li><p>Expires:-1 Cache-Control:no-cache Pragma:nocache（为了兼容不同版本的浏览器）这三个响应头可以禁用缓存</p>
+</li>
+<li><p>Refresh:3;url=<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a> 自动刷新响应并请求url</p>
+</li>
+</ul>
+<p><strong> 4??</strong> 表示客户端的错误</p>
+<p><strong> 5??</strong> 表示服务器的错误</p>
+<p><strong> Server</strong>:Apache-Coyote/1.1</p>
+<p><strong> Set-Cookie</strong>:</p>
+<p><strong> Content-Type:text/html;charset=utf-8</strong> 响应内容的MIME类型（文本必须要添加编码类型，而其它如图片格式不需要指定）</p>
+<p><strong> Content-Length</strong>:404</p>
+<p><strong> Date</strong>：</p>
+<p><strong> 空行</strong></p>
+<p><strong> 响应正文</strong>（html内容被浏览器渲染）</p>
+<p>7.图片生成</p>
+<p>基本类：Image、ImageIO、BufferedImage、ImageIcon</p>
+<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>1.在javax.servlet接口下总共由五个方法，其中其中init()和destroy()方法只执行一次，在init(ServletConfig config)方法执行时会创建一个ServletConfig对象，负责对web.xml文件中servlet对象的配置信息。</p>
+<p>2.ServletConfig接口的方法</p>
+<ul>
+<li><p>String getServletName()</p>
+</li>
+<li><p>ServletContext getServletContext()</p>
+</li>
+<li><p>String getInitParameter(String name)在对象构造器调用之后立即调用</p>
+</li>
+<li><p>Enumeration getInitParameterNames()</p>
+</li>
+</ul>
+<p>3.servlet是线程不安全的，但换来的响应速度的大大提高。而解决线程不安全的方式有如下：</p>
+<ul>
+<li><p>不创建成员变量，只创建局部变量。</p>
+</li>
+<li><p>可以创建无状态的成员变量。</p>
+</li>
+<li><p>可以创建有状态的成员变量，但是变量的状态是只读的。</p>
+</li>
+</ul>
+<p>4.使用标签url-pattern可以匹配不同的请求，并且在其中可以使用通配符，匹配原则为匹配程度越高，访问优先级也越大。</p>
+<p>5.所有的web项目下的web.xml文件都继承一个来自tomcat的conf目录下的web.xml文件，在conf目录下的web.xml文件中可以实现如下功能，如果没有任何servlet处理该请求则调用DefaultServlet来处理，返回404；还可以设置session的超时时间；另外所有的jsp文件的请求，处理都会交给JSPServlet来执行，用于生成静态的html页面响应给浏览器。</p>
+<p>6.Tomcat通过对配置文件的读取（xml读取技术）以及反射技术，实现对实例类和对象的生成和调用。</p>
+<p>7.一个项目只能有一个ServletContext对象，（application），目的是实现多个servlet的沟通。且在启动Tomcat时就创建而在Tomcat关闭时才销毁。</p>
+<p>8.利用ServletContext可以获得带盘符的绝对路径和将资源作为流输入.</p>
+<p>9.服务器每次收到一个请求时,都会为这个请求开辟一个新的线程.而客户端的请求被封装到request对象中去,并通过response对象与客户端连接到一起,用于响应客户端.</p>
+<p>10.请求头的使用</p>
+<ul>
+<li>请求重定向 response.setHeader(“Location”,”/项目名/ServletLocation”);response.setStatus(302);</li>
+</ul>
+<p>或者使用response.sendRedirect(“www.baidu.com”);</p>
+<ul>
+<li><p>定时刷新页面 response.setHeader(“Refresh”,”5,URL=/项目名/ServletLocation”);</p>
+</li>
+<li><p>禁用浏览器缓存 </p>
+</li>
+</ul>
+<p>response.setHeader(“Cache-Control”,”no-cache”);</p>
+<p>response.setHeader(“pragma”,”no-cache”);</p>
+<p>response.setHeader(“expires”,”-1”);</p>
+<p>除此之外还可以使用meta标签来设置禁用浏览器缓存.</p>
+<p>11.不能同时使用响应的字符流和字节流.</p>
+<p>12.请求转发和请求重定向:</p>
+<p>在请求转发时,第一个页面在响应内容中什么都不做,完全交给请求的页面去完成,否则会抛出异常.只有一次请求和一次响应,且第一个servlet</p>
+<ul>
+<li><p>请求转发:request.getRequestDispatcher(“uri”).forward(“desUri”);只包含请求头,不保留请求体,地址栏不变.</p>
+</li>
+<li><p>请求包含:request.getRequestDispatcher(“uri”).include(“desUri”);请求头和体都保留,地址栏不变.</p>
+</li>
+<li><p>请求重定向:两次请求,两次响应地址栏要变</p>
+</li>
+<li><p>请求转发是服务器端的行为,只能转发本项目下的servlet,而请求重定向则既可以访问本地也可以访问外部其他项目.</p>
+</li>
+<li><p>请求转发的效率要高于请求重定向,因为是同一次请求.</p>
+</li>
+<li><p>只有请求转发才可以下一个servlet中获取request,因为request属性再一次请求完成之后会被被销毁.</p>
+</li>
+</ul>
+<p>13.编码问题</p>
+<ul>
+<li>响应编码:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">response.setCharacterEncoding(&quot;utf-8&quot;);</span><br><span class="line"></span><br><span class="line">response.setHeader(&quot;Content-type&quot;,&quot;text/html;charset=utf-8&quot;);</span><br><span class="line"></span><br><span class="line">response.getWriter().write(&quot;&lt;h1&gt;你好&lt;/h1&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>请求编码:在获取来自客户端的参数时,要先对其进行解码,转换为字节数组,然后在将其构造成相关编码的字符串.</li>
+</ul>
+<h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><p>1.Java Server Page 在原有html基础上可以添加Java脚本.在web开发中充当view层获取用户访问和显示响应内容.</p>
+<p>2.java脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%...%&gt;java代码片段,在一个方法内可以写什么内容,就可以在其中写什么内容。</span><br><span class="line"></span><br><span class="line">&lt;%=...%&gt;java表达式,用于输出。</span><br><span class="line"></span><br><span class="line">&lt;%!...%&gt;Java声明,用于创建类的成员变量和成员方法.</span><br></pre></td></tr></table></figure>
+<p>3.Jsp的底层是servlet，当Jsp页面第一次被访问时，服务器会把Jsp文件编译成java文件，灾后再编译为.class文件，之后创建该类的对象，最后调用该类的service()方法。而第二次请求时，直接调用servlet方法。</p>
+<p>4.Jsp注释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当服务器把&lt;--我是注释--&gt;编译之后，在客户端是看不见的，但是html中的注释是可以看见的。</span><br></pre></td></tr></table></figure>
+<p>5.cookie是由服务器创建的一个键值对，存于浏览器中。（Set-Coookie,Cookie），一个cookie最大4kb，一个服务器可以向浏览器保存20个cookie，而一个浏览器最多保存300个cookie。使用cookie可以跟踪客户端的状态，如：保存购物车，显示上次登录名。</p>
+<ul>
+<li>当cookie的maxAge时间设置为大于0，它会保存在客户端硬盘上，当该值小于0，则会在浏览器关闭后消失，保存在内存中，而等于0则相当于删除该cookie。</li>
+</ul>
+<p>*cookie的path：浏览器访问某个路径时，需要将浏览器中的cookie一并返回服务器，但是并不是全部返回，要根据浏览器访问的路径来返回。访问的路径越深，响应的每一层路径下对应的cookie都得携带，也即返回的cookie越多。</p>
+<p>6.HttpSession是由JavaWeb提供的，用于跟踪会话，是服务器端创建的并保存在服务器端。底层依赖于cookie或者url重写。</p>
+<ul>
+<li><p>会话范围：从打开浏览器访问，到关闭浏览器结束。服务器端会为每个客户创建一个session缓存在一个Map中。</p>
+</li>
+<li><p>sessionid：每一个servlet在调用其getSession()方法时会创建一个sessionid，而每一个jsp页面由于默认有session对象，所以访问时直接生成sessionid保存在cookie里面。</p>
+</li>
+<li><p>URL重写：当浏览器禁用cookie之后，可以使用url重写来实现session的目的，但需要对浏览器的所有超链接、表单等请求全部进行重写，在其末尾添加JSessionId。可以使用response.encodeURL(“”)方法来实现对URL智能重写（cookie可以使用就不重写，否则就重写）。</p>
+</li>
+<li><p>JSessionId的生成可以使用UUID类下的方法来实现。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UUID.randomUUID().toString().replace(&quot;-&quot;, &quot;&quot;).toUpperCase();</span><br></pre></td></tr></table></figure>
+<p>7.三大指令（page,taglib,include）</p>
+<ul>
+<li>page</li>
+</ul>
+<p>1.pageEncoding 页面编码</p>
+<p>2.import</p>
+<p>3.errorPage 页面出错时指定转发到哪一个页面。</p>
+<p>4.isErrorPage 指定错误页面，当被标记为错误页面时，才会返回状态码500，否则返回200.并且该页面可以使用exception对象。</p>
+<p>5.autoFlush 指定jsp页面的输出缓冲区满时，是否自动刷新！默认为true，设置为false时会在满时抛出异常。</p>
+<p>6.buffer 指定缓冲区的大小，默认8kb，不修改。</p>
+<p>7.isELIgnored 是否忽略el表达式，默认为falsebuhulue。</p>
+<ul>
+<li>taglib 导入标签库</li>
+</ul>
+<p>1.prefix 指定标签库在本页面中的前缀！防止命名冲突。</p>
+<p>2.uri 指定标签库的位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@taglib prefix=&quot;&quot; uri=&quot;/XXX&quot;%&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>include 静态包含,在Jsp编译成java文件是完成，生成一个servlet，生成一个.class</li>
+</ul>
+<p>而请求转发的include()是一个方法，包含的和被包含的是两个servlet，即两个.class！</p>
+<p>使用include静态包含的原因是为了实现重用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@include file=&quot;不能是变量&quot;%&gt;</span><br></pre></td></tr></table></figure>
+<p>8.九大内置对象</p>
+<ul>
+<li>pageContext</li>
+</ul>
+<p>1.作用域为一个Jsp页面，可以在当前Jsp页面和其中使用的标签之间共享数据。</p>
+<p>2.可以用来代理其他类（通过pageContext.setAttribute(“xxx”,”XXX”,PageContext.XXX_SCOPE)）。</p>
+<p>3.全域查找：pageContext.findAttribute(“xxx”)，从小到大，依次查找。</p>
+<p>4.获取其它8个内置对象。</p>
+<ul>
+<li>Servlet有三大域对象，Jsp有四大域对象。</li>
+</ul>
+<p>9.Jsp动作标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:include&gt;</span><br><span class="line"></span><br><span class="line">&lt;jsp:forward&gt;</span><br><span class="line"></span><br><span class="line">&lt;jsp:param value=&quot;xxx&quot; name=&quot;XXX&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>10.JavaBean</p>
+<ul>
+<li><p>BeanInfo </p>
+</li>
+<li><p>introspector 内省</p>
+</li>
+</ul>
+<p>11.EL表达式</p>
+<ul>
+<li><p>EL是Jsp内置的表达式，在Jsp2.0开始不再让使用Java脚本，EL表达式只用来在页面输出。</p>
+</li>
+<li><p>使用EL表达式来输出属性时，默认输出使用全域查找pageScope\requestScope\sessionScope\applicationScope</p>
+</li>
+<li><p>引用属性时使用语法</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;pageScope.xxx.xxx.xxx&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>共有11大内置对象</li>
+</ul>
+<p>1.param和paramValues</p>
+<p>2.initParam</p>
+<p>3.cookie</p>
+<p>4.pageContext 一个顶九个</p>
+<p>5.header和headerValues</p>
+<ul>
+<li>JSTL</li>
+</ul>
+<p>1.JSTL是apache对EL表达式的扩展，JSTL是标签语言，不属于JSP内置标签，需要自己导入。</p>
+<p>2.包含四大库：core、fmt（日期、数字）、sql、xml。</p>
+<p>3.core</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ tablib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jstl/core&quot;&gt;</span><br><span class="line"></span><br><span class="line">out</span><br><span class="line"></span><br><span class="line">* &lt;c:out&gt;</span><br><span class="line"></span><br><span class="line">&gt; value：设置输出的字符串常量，也可以是EL表达式。</span><br><span class="line"></span><br><span class="line">&gt; escapeXml：默认为true</span><br><span class="line"></span><br><span class="line">&gt; default：当要输出的内容是null时，输出默认的值。</span><br><span class="line"></span><br><span class="line">set:&lt;c:set name=&quot;username&quot; value=&quot;lisi&quot; scope=&quot;application&quot;&gt;，默认为page域。</span><br><span class="line"></span><br><span class="line">remove：默认删除所有的作用域中的指定变量，除非指定其作用域。</span><br><span class="line"></span><br><span class="line">url:</span><br><span class="line"></span><br><span class="line">choose</span><br><span class="line"></span><br><span class="line">if</span><br></pre></td></tr></table></figure>
+<p>12.JavaWeb三层架构</p>
+<ul>
+<li><p>Web层（servlet，jsp，api）</p>
+</li>
+<li><p>业务层（service）业务对象</p>
+</li>
+<li><p>数据层（数据库操作 DAO）</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/18/See-U-Again/" rel="next" title="See U Again">
+                <i class="fa fa-chevron-left"></i> See U Again
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">RoisinLee</p>
+              <p class="site-description motion-element" itemprop="description">个人JAVA学习小站</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/RoisinLee" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1329842526@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#xml"><span class="nav-number">1.</span> <span class="nav-text">xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单元测试（jnit）"><span class="nav-number">2.</span> <span class="nav-text">单元测试（jnit）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件系统体系结构"><span class="nav-number">3.</span> <span class="nav-text">软件系统体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB"><span class="nav-number">4.</span> <span class="nav-text">WEB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web资源"><span class="nav-number">4.1.</span> <span class="nav-text">web资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tomcat"><span class="nav-number">4.2.</span> <span class="nav-text">Tomcat</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet"><span class="nav-number">5.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP"><span class="nav-number">6.</span> <span class="nav-text">JSP</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RoisinLee</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.1"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
