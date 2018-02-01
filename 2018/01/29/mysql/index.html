@@ -123,30 +123,31 @@
 
 
   
-  <meta name="keywords" content="RoisinLee, Java,JavaScript,李文清,读书笔记" />
+  <meta name="keywords" content="javaweb," />
 
 
-<meta name="description" content="SEE U AGAIN!">
+<meta name="description" content="MySQL初步认识SQL简单回顾下MySQL的基本操作。  结构化查询语言，除了包括国际化标准组织得统一SQL标准之外，还有每个数据库系统单独的方言。 登录：1mysql -uroot -p">
+<meta name="keywords" content="javaweb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="See U Again">
-<meta property="og:url" content="https://RoisinLee.github.io/2018/01/18/See-U-Again/index.html">
+<meta property="og:title" content="关于MySQL的学习笔记（一）">
+<meta property="og:url" content="https://RoisinLee.github.io/2018/01/29/mysql/index.html">
 <meta property="og:site_name" content="时间图解">
-<meta property="og:description" content="SEE U AGAIN!">
+<meta property="og:description" content="MySQL初步认识SQL简单回顾下MySQL的基本操作。  结构化查询语言，除了包括国际化标准组织得统一SQL标准之外，还有每个数据库系统单独的方言。 登录：1mysql -uroot -p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-18T09:38:04.508Z">
+<meta property="og:updated_time" content="2018-01-28T21:55:53.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="See U Again">
-<meta name="twitter:description" content="SEE U AGAIN!">
+<meta name="twitter:title" content="关于MySQL的学习笔记（一）">
+<meta name="twitter:description" content="MySQL初步认识SQL简单回顾下MySQL的基本操作。  结构化查询语言，除了包括国际化标准组织得统一SQL标准之外，还有每个数据库系统单独的方言。 登录：1mysql -uroot -p">
 
 
 
 
 
 
-  <link rel="canonical" href="https://RoisinLee.github.io/2018/01/18/See-U-Again/"/>
+  <link rel="canonical" href="https://RoisinLee.github.io/2018/01/29/mysql/"/>
 
 
-  <title>See U Again | 时间图解</title>
+  <title>关于MySQL的学习笔记（一） | 时间图解</title>
   
 
 
@@ -298,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://RoisinLee.github.io/2018/01/18/See-U-Again/">
+    <link itemprop="mainEntityOfPage" href="https://RoisinLee.github.io/2018/01/29/mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RoisinLee">
@@ -315,7 +316,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">See U Again</h2>
+          <h2 class="post-title" itemprop="name headline">关于MySQL的学习笔记（一）</h2>
         
 
         <div class="post-meta">
@@ -327,7 +328,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T17:37:25+08:00">2018-01-18</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-29T05:35:59+08:00">2018-01-29</time>
             
 
             
@@ -335,6 +336,24 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -344,8 +363,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/18/See-U-Again/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/01/18/See-U-Again/" itemprop="commentCount"></span>
+                <a href="/2018/01/29/mysql/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/01/29/mysql/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -353,7 +372,7 @@
 
           
           
-             <span id="/2018/01/18/See-U-Again/" class="leancloud_visitors" data-flag-title="See U Again">
+             <span id="/2018/01/29/mysql/" class="leancloud_visitors" data-flag-title="关于MySQL的学习笔记（一）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -384,8 +403,26 @@
       
 
       
-        <ul>
-<li>SEE U AGAIN!</li>
+        <h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="初步认识SQL"><a href="#初步认识SQL" class="headerlink" title="初步认识SQL"></a>初步认识SQL</h2><p><strong>简单回顾下MySQL的基本操作。</strong></p>
+<ul>
+<li>结构化查询语言，除了包括国际化标准组织得统一SQL标准之外，还有每个数据库系统单独的方言。</li>
+<li>登录：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>DDL(数据定义语言)，针对库，表结构。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//创建</span><br><span class="line">create table tb_name[if not exists](</span><br><span class="line">rname1 rtype2,</span><br><span class="line">rname2 rtype2,</span><br><span class="line">...</span><br><span class="line">rnamen rtype</span><br><span class="line">);</span><br><span class="line">//删除</span><br><span class="line">drop table tb_name;</span><br><span class="line">//修改</span><br><span class="line">alter table tb_name </span><br><span class="line">add/modify/drop</span><br><span class="line">row...</span><br><span class="line">;</span><br><span class="line">alter table tb_name rename to new_tb_name;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DML(数据操作语言)，对与数据的增删改。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//增，在添加数据时只能一行一行添加，如果出现相关列没有指定数据的情况，则默认为null</span><br><span class="line">insert into tb_name(列名1,列名2,...) values(值1,值2,...);</span><br><span class="line">insert into tb_name values(值1,值2,...);//要一一对应。</span><br><span class="line">//删</span><br><span class="line">delete from tb_name where 条件语句;</span><br><span class="line">//改，在对每一行数据进行修改的时候需要指定条件，否则会修改所有的数据。</span><br><span class="line">update tb_name set 列名=值 where 条件语句;</span><br><span class="line">//where 条件</span><br><span class="line">where 列名1=值1 or 列名2=值2;</span><br><span class="line">where 列名1 &gt;= 特定值 AND 列名1 &lt;= 特定值;</span><br><span class="line">where 列名1 between 特定值 AND 特定值;</span><br><span class="line">where 列名1 in (特定值,特定值,...);</span><br><span class="line">where 列名1 is null;//列名1=null恒为false。</span><br><span class="line">where 列名1 is not null;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DCL(数据控制语言)，定义数据库记录。对用户的创建以及授权。一个项目创建一个用户，一个项目对应的数据库只有一个。一个用户只能使用自己的数据库，别的库他无法访问。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//创建用户</span><br><span class="line">create user username@IP地址 identified by &quot;password&quot;;</span><br><span class="line">//授权</span><br><span class="line">grant 权限(create;alter;drop;insert;update;select; all) on db_name.tb_name to user@IP地址(默认为localhost);</span><br><span class="line">//取消授权</span><br><span class="line">revoke 权限(create;alter;drop;insert;update;select; all) on db_name.tb_name from user@IP地址(默认为localhost);</span><br><span class="line">//查看权限</span><br><span class="line">show grants for user@IP地址;</span><br><span class="line">//删除用户</span><br><span class="line">drop user user@IP地址;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DQL(数据查询语言)，用于数据库得查询。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">//1.j基本查询 查询整张表</span><br><span class="line">select * from tb_name;</span><br><span class="line">//列运算，如果列部位数值，则将其默认当作是0。</span><br><span class="line">select 列名*num from tb_name;</span><br><span class="line">//连接字符串</span><br><span class="line">select concat(str,str,...,列1,列2,str,...) from tb_name;</span><br><span class="line">//去除运算时得空值,null+其他=null</span><br><span class="line">select 列1 + ifnull(列2,0) from tb_name; </span><br><span class="line"> //别名</span><br><span class="line">select 列名 别名 from tb_name where 条件语句;</span><br><span class="line">//在查询整张表某些特定数据时可以使用where条件语句进行限定</span><br><span class="line"></span><br><span class="line">//2.模糊查询 &quot;_&quot;代表一个占位符,&quot;%&quot;可以代表任意的占位符。</span><br><span class="line">select 列名1,列名2... from tb_name where 列名 like &quot;_&quot;;</span><br><span class="line">select 列名1,列名2... from tb_name where 列名 like &quot;%&quot;;</span><br><span class="line"></span><br><span class="line">//3.排序 order by 规则 (asc升序 desc降序),如果规则1可以排序，则不再往后进行，否则按照后续规则，直到实现排序。</span><br><span class="line">select 列名1,列名2... from tb_name where 列名 like &quot;%&quot; order by 规则1,规则2,规则3...;</span><br><span class="line">//例</span><br><span class="line">select name,orignalPrice,promotePrice,(orignalPrice-promotePrice) from product where name like &quot;%电视%&quot; order by (orignalPrice-promotePrice) desc;</span><br><span class="line"></span><br><span class="line">//4.聚合函数</span><br><span class="line">select count(*) from tb_name;</span><br><span class="line">select sum(列1) from tb_name;</span><br><span class="line">select max(列1) from tb_name;</span><br><span class="line">select min(列1) from tb_name;</span><br><span class="line">select avg(列1) from tb_name;</span><br><span class="line"></span><br><span class="line">//5.分组查询 只能查询分组列和关于分组列的聚合函数。</span><br><span class="line">select 列1,聚合函数 from tb_name where 分组前条件语句 group by 列1 having 分组后条件语句 order by 顺序 （asc / desc）;</span><br><span class="line"></span><br><span class="line">//6.limit子句(方言 只限MySQL) limit a,b; a为起始行（从0开始），b为查询行数，常常用于分页查询。</span><br><span class="line">select * from tb_name limit （当前页数-1）* 每页记录数,每页记录数;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -402,6 +439,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/javaweb/" rel="tag"># javaweb</a>
+          
+        </div>
+      
 
       
       
@@ -411,14 +454,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/01/25/theDayOfEarth/" rel="next" title="图解地球神奇的一天">
+                <i class="fa fa-chevron-left"></i> 图解地球神奇的一天
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/19/web/" rel="prev" title="我的JavaWeb学习简录">
-                我的JavaWeb学习简录 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/02/mysql2/" rel="prev" title="关于MySQL的学习笔记（二）">
+                关于MySQL的学习笔记（二） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -471,8 +518,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -552,6 +608,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL"><span class="nav-number">1.</span> <span class="nav-text">MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初步认识SQL"><span class="nav-number">1.1.</span> <span class="nav-text">初步认识SQL</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
