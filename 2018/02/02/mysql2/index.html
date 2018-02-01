@@ -134,7 +134,7 @@
 <meta property="og:site_name" content="时间图解">
 <meta property="og:description" content="MySQL深入认识MySQL 编码问题 1234567891011121314show variables like &amp;quot;char%&amp;quot;;//展示字符编码+--------------------------+----------------------------+| Variable_name            | Value                      |+">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-01T08:59:23.531Z">
+<meta property="og:updated_time" content="2018-02-01T09:03:44.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于MySQL的学习笔记（二）">
 <meta name="twitter:description" content="MySQL深入认识MySQL 编码问题 1234567891011121314show variables like &amp;quot;char%&amp;quot;;//展示字符编码+--------------------------+----------------------------+| Variable_name            | Value                      |+">
@@ -406,6 +406,7 @@
         <h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="深入认识MySQL"><a href="#深入认识MySQL" class="headerlink" title="深入认识MySQL"></a>深入认识MySQL</h3><ul>
 <li><p>编码问题</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">show variables like &quot;char%&quot;;//展示字符编码</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| Variable_name            | Value                      |</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| character_set_client     | utf8                       |</span><br><span class="line">| character_set_connection | utf8                       |</span><br><span class="line">| character_set_database   | latin1                     |</span><br><span class="line">| character_set_filesystem | binary                     |</span><br><span class="line">| character_set_results    | utf8                       |</span><br><span class="line">| character_set_server     | latin1                     |</span><br><span class="line">| character_set_system     | utf8                       |</span><br><span class="line">| character_sets_dir       | /usr/share/mysql/charsets/ |</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">//修改其中的变量可以临时在终端使用新的编码，要想永久生效，就必须修改my.ini配置文件，将对应的变量（character-set-server=utf8）进行修改。</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 </li>
 <li><p>MySQL备份与回复</p>
 <p><strong>备份与恢复的手段主要是sql脚本。</strong></p>
